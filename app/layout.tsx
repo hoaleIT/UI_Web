@@ -7,9 +7,9 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'EduManager - School Management System',
+  title: 'EduManager - Hệ thống quản lí học sinh',
   description: 'Demo Dashboard for School Management using Next.js routing features',
-  generator: 'v0.app',
+  generator: 'Next.js',
   icons: {
     icon: [
       {

@@ -26,10 +26,10 @@ export default async function StudentDetailPage({ params }: PageProps) {
       {/* Info Banner */}
       <Card className="border-chart-1/30 bg-chart-1/5">
         <CardContent className="py-4">
-          <p className="text-sm text-muted-foreground">
+          {/* <p className="text-sm text-muted-foreground">
             <span className="font-semibold text-chart-1">Dynamic Route:</span> /dashboard/students/[id] - 
             Day la trang chi tiet hoc sinh voi ID = {id}. URL nay duoc tao dong dua tren ID cua hoc sinh.
-          </p>
+          </p> */}
         </CardContent>
       </Card>
 
@@ -37,7 +37,7 @@ export default async function StudentDetailPage({ params }: PageProps) {
       <Link href="/dashboard/students">
         <Button variant="ghost" className="gap-2">
           <ArrowLeft className="h-4 w-4" />
-          Quay lai danh sach
+          Quay lại danh sách
         </Button>
       </Link>
 
@@ -52,11 +52,11 @@ export default async function StudentDetailPage({ params }: PageProps) {
               </div>
               <div>
                 <h2 className="text-2xl font-bold text-foreground">{student.name}</h2>
-                <p className="text-muted-foreground">Ma hoc sinh: HS{student.id.padStart(6, '0')}</p>
+                <p className="text-muted-foreground">Mã học sinh: HS{student.id.padStart(6, '0')}</p>
                 <div className="mt-2 flex gap-2">
                   <Badge variant="secondary">{student.class}</Badge>
                   <Badge variant={student.status === 'active' ? 'default' : 'secondary'}>
-                    {student.status === 'active' ? 'Dang hoc' : student.status === 'graduated' ? 'Da tot nghiep' : 'Nghi hoc'}
+                    {student.status === 'active' ? 'Đang học' : student.status === 'graduated' ? 'Đã tốt nghiệp' : 'Nghỉ học'}
                   </Badge>
                 </div>
               </div>
@@ -64,11 +64,11 @@ export default async function StudentDetailPage({ params }: PageProps) {
             <div className="flex gap-2">
               <Button variant="outline" size="sm" className="gap-2">
                 <Edit className="h-4 w-4" />
-                Chinh sua
+                Chỉnh sửa
               </Button>
               <Button variant="outline" size="sm" className="gap-2 text-destructive">
                 <Trash2 className="h-4 w-4" />
-                Xoa
+                Xóa
               </Button>
             </div>
           </CardHeader>
@@ -86,21 +86,21 @@ export default async function StudentDetailPage({ params }: PageProps) {
               <div className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-muted-foreground" />
                 <div>
-                  <p className="text-sm text-muted-foreground">So dien thoai</p>
+                  <p className="text-sm text-muted-foreground">Số điện thoại</p>
                   <p className="font-medium">{student.phone}</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
                 <Calendar className="h-5 w-5 text-muted-foreground" />
                 <div>
-                  <p className="text-sm text-muted-foreground">Ngay sinh</p>
+                  <p className="text-sm text-muted-foreground">Ngày sinh</p>
                   <p className="font-medium">{new Date(student.dateOfBirth).toLocaleDateString('vi-VN')}</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
                 <MapPin className="h-5 w-5 text-muted-foreground" />
                 <div>
-                  <p className="text-sm text-muted-foreground">Dia chi</p>
+                  <p className="text-sm text-muted-foreground">Địa chỉ</p>
                   <p className="font-medium">{student.address}</p>
                 </div>
               </div>
@@ -113,26 +113,26 @@ export default async function StudentDetailPage({ params }: PageProps) {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <GraduationCap className="h-5 w-5" />
-              Ket qua hoc tap
+               Kết quả học tập
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="rounded-lg bg-accent/50 p-4 text-center">
-              <p className="text-sm text-muted-foreground">Diem trung binh</p>
+              <p className="text-sm text-muted-foreground">Điểm trung bình</p>
               <p className={`text-4xl font-bold ${student.gpa >= 8 ? 'text-success' : student.gpa >= 6.5 ? 'text-warning' : 'text-destructive'}`}>
                 {student.gpa}
               </p>
               <p className="text-sm text-muted-foreground">
-                {student.gpa >= 8 ? 'Gioi' : student.gpa >= 6.5 ? 'Kha' : 'Trung binh'}
+                {student.gpa >= 8 ? 'Giỏi' : student.gpa >= 6.5 ? 'Khá' : 'Trung bình'}
               </p>
             </div>
 
             <div className="space-y-2">
-              <p className="text-sm font-medium text-muted-foreground">Thanh tich</p>
+              <p className="text-sm font-medium text-muted-foreground">Thành tích</p>
               <div className="flex flex-wrap gap-2">
-                {student.gpa >= 9 && <Badge>Hoc sinh gioi</Badge>}
+                {student.gpa >= 9 && <Badge>Học sinh giỏi</Badge>}
                 {student.gpa >= 8 && <Badge variant="secondary">Top 10%</Badge>}
-                <Badge variant="outline">Nam hoc 2024-2025</Badge>
+                <Badge variant="outline">Năm học 2024-2025</Badge>
               </div>
             </div>
           </CardContent>
@@ -145,7 +145,7 @@ export default async function StudentDetailPage({ params }: PageProps) {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Users className="h-5 w-5" />
-              Ban hoc cung lop ({classmates.length})
+              Bạn học cùng lớp ({classmates.length})
             </CardTitle>
           </CardHeader>
           <CardContent>

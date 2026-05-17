@@ -20,22 +20,22 @@ export default function StudentsPage() {
       {/* Info Banner */}
       <Card className="border-chart-2/30 bg-chart-2/5">
         <CardContent className="py-4">
-          <p className="text-sm text-muted-foreground">
+          {/* <p className="text-sm text-muted-foreground">
             <span className="font-semibold text-chart-2">Static Route:</span> /dashboard/students - 
             Click vao ten hoc sinh de xem chi tiet (Dynamic Route) hoac nhan vao icon <Eye className="inline h-4 w-4" /> de mo Quick View (Intercepting Route)
-          </p>
+          </p> */}
         </CardContent>
       </Card>
 
       {/* Header */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h3 className="text-2xl font-bold text-foreground">Danh sach hoc sinh</h3>
-          <p className="text-muted-foreground">Quan ly thong tin hoc sinh trong truong</p>
+          <h3 className="text-2xl font-bold text-foreground">Danh sách học sinh</h3>
+          <p className="text-muted-foreground">Quản lý thông tin học sinh trong trường</p>
         </div>
         <Button className="gap-2">
           <Plus className="h-4 w-4" />
-          Them hoc sinh
+          Thêm học sinh
         </Button>
       </div>
 
@@ -45,13 +45,13 @@ export default function StudentsPage() {
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
             <div className="relative flex-1">
               <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-              <Input placeholder="Tim kiem hoc sinh..." className="pl-9" />
+              <Input placeholder="Tìm kiếm học sinh..." className="pl-9" />
             </div>
             <div className="flex gap-2">
-              <Badge variant="secondary" className="cursor-pointer">Tat ca</Badge>
-              <Badge variant="outline" className="cursor-pointer">Khoi 12</Badge>
-              <Badge variant="outline" className="cursor-pointer">Khoi 11</Badge>
-              <Badge variant="outline" className="cursor-pointer">Khoi 10</Badge>
+              <Badge variant="secondary" className="cursor-pointer">Tất cả</Badge>
+              <Badge variant="outline" className="cursor-pointer">Khối 12</Badge>
+              <Badge variant="outline" className="cursor-pointer">Khối 11</Badge>
+              <Badge variant="outline" className="cursor-pointer">Khối 10</Badge>
             </div>
           </div>
         </CardContent>
@@ -60,18 +60,18 @@ export default function StudentsPage() {
       {/* Students Table */}
       <Card>
         <CardHeader>
-          <CardTitle>Hoc sinh ({students.length})</CardTitle>
+          <CardTitle>Học sinh ({students.length})</CardTitle>
         </CardHeader>
         <CardContent>
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>Ho va ten</TableHead>
+                <TableHead>Họ và tên</TableHead>
                 <TableHead>Email</TableHead>
-                <TableHead>Lop</TableHead>
+                <TableHead>Lớp</TableHead>
                 <TableHead>GPA</TableHead>
-                <TableHead>Trang thai</TableHead>
-                <TableHead className="text-right">Thao tac</TableHead>
+                <TableHead>Trạng thái</TableHead>
+                <TableHead className="text-right">Thao tác</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -99,7 +99,7 @@ export default function StudentsPage() {
                   </TableCell>
                   <TableCell>
                     <Badge variant={student.status === 'active' ? 'default' : 'secondary'}>
-                      {student.status === 'active' ? 'Dang hoc' : student.status === 'graduated' ? 'Da tot nghiep' : 'Nghi hoc'}
+                      {student.status === 'active' ? 'Đang học' : student.status === 'graduated' ? 'Đã tốt nghiệp' : 'Nghỉ học'}
                     </Badge>
                   </TableCell>
                   <TableCell className="text-right">

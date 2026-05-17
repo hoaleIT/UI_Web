@@ -35,10 +35,10 @@ export default async function ClassDetailPage({ params }: PageProps) {
       {/* Info Banner */}
       <Card className="border-chart-1/30 bg-chart-1/5">
         <CardContent className="py-4">
-          <p className="text-sm text-muted-foreground">
+          {/* <p className="text-sm text-muted-foreground">
             <span className="font-semibold text-chart-1">Dynamic Route:</span> /dashboard/classes/[id] - 
             Trang chi tiet lop hoc voi ID = {id}. Hien thi danh sach hoc sinh trong lop.
-          </p>
+          </p> */}
         </CardContent>
       </Card>
 
@@ -46,7 +46,7 @@ export default async function ClassDetailPage({ params }: PageProps) {
       <Link href="/dashboard/classes">
         <Button variant="ghost" className="gap-2">
           <ArrowLeft className="h-4 w-4" />
-          Quay lai danh sach
+          Quay lại danh sách
         </Button>
       </Link>
 
@@ -56,11 +56,11 @@ export default async function ClassDetailPage({ params }: PageProps) {
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <CardTitle className="text-3xl">{classData.name}</CardTitle>
-              <p className="text-muted-foreground">Khoi {classData.grade} - Nam hoc 2024-2025</p>
+              <p className="text-muted-foreground">Khối {classData.grade} - Năm học 2024-2025</p>
             </div>
             <div className="flex gap-2">
-              <Badge variant="outline" className="text-base">Khoi {classData.grade}</Badge>
-              <Badge className="text-base">{classStudents.length} hoc sinh</Badge>
+              <Badge variant="outline" className="text-base">Khối {classData.grade}</Badge>
+              <Badge className="text-base">{classStudents.length} học sinh</Badge>
             </div>
           </div>
         </CardHeader>
@@ -69,21 +69,21 @@ export default async function ClassDetailPage({ params }: PageProps) {
             <div className="flex items-center gap-3 rounded-lg bg-accent/50 p-4">
               <Users className="h-8 w-8 text-chart-1" />
               <div>
-                <p className="text-sm text-muted-foreground">Si so</p>
+                <p className="text-sm text-muted-foreground">Sĩ số</p>
                 <p className="text-2xl font-bold">{classData.studentCount}</p>
               </div>
             </div>
             <div className="flex items-center gap-3 rounded-lg bg-accent/50 p-4">
               <MapPin className="h-8 w-8 text-chart-2" />
               <div>
-                <p className="text-sm text-muted-foreground">Phong hoc</p>
+                <p className="text-sm text-muted-foreground">Phòng học</p>
                 <p className="text-2xl font-bold">{classData.room}</p>
               </div>
             </div>
             <div className="flex items-center gap-3 rounded-lg bg-accent/50 p-4">
               <Clock className="h-8 w-8 text-chart-3" />
               <div>
-                <p className="text-sm text-muted-foreground">Buoi hoc</p>
+                <p className="text-sm text-muted-foreground">Buổi học</p>
                 <p className="text-2xl font-bold">{classData.schedule}</p>
               </div>
             </div>
@@ -106,7 +106,7 @@ export default async function ClassDetailPage({ params }: PageProps) {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <GraduationCap className="h-5 w-5" />
-              Giao vien chu nhiem
+              Giáo viên chủ nhiệm
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -132,7 +132,7 @@ export default async function ClassDetailPage({ params }: PageProps) {
         <CardHeader className="flex flex-row items-center justify-between">
           <CardTitle className="flex items-center gap-2">
             <Users className="h-5 w-5" />
-            Danh sach hoc sinh ({classStudents.length})
+            Danh sách học sinh ({classStudents.length})
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -141,10 +141,10 @@ export default async function ClassDetailPage({ params }: PageProps) {
               <TableHeader>
                 <TableRow>
                   <TableHead>STT</TableHead>
-                  <TableHead>Ho va ten</TableHead>
+                  <TableHead>Họ và tên</TableHead>
                   <TableHead>Email</TableHead>
                   <TableHead>GPA</TableHead>
-                  <TableHead>Trang thai</TableHead>
+                  <TableHead>Trạng thái</TableHead>
                   <TableHead className="text-right">Xem</TableHead>
                 </TableRow>
               </TableHeader>
@@ -171,7 +171,7 @@ export default async function ClassDetailPage({ params }: PageProps) {
                     </TableCell>
                     <TableCell>
                       <Badge variant={student.status === 'active' ? 'default' : 'secondary'}>
-                        {student.status === 'active' ? 'Dang hoc' : 'Nghi hoc'}
+                        {student.status === 'active' ? 'Đang học' : 'Nghỉ học'}
                       </Badge>
                     </TableCell>
                     <TableCell className="text-right">
@@ -187,7 +187,7 @@ export default async function ClassDetailPage({ params }: PageProps) {
             </Table>
           ) : (
             <div className="py-8 text-center text-muted-foreground">
-              Chua co hoc sinh trong lop nay
+              Chưa có học sinh trong lớp này
             </div>
           )}
         </CardContent>

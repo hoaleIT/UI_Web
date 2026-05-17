@@ -22,12 +22,12 @@ export default function TeachersPage() {
       {/* Header */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h3 className="text-2xl font-bold text-foreground">Danh sach giao vien</h3>
-          <p className="text-muted-foreground">Quan ly thong tin giao vien trong truong</p>
+          <h3 className="text-2xl font-bold text-foreground">Danh sách giáo viên</h3>
+          <p className="text-muted-foreground">Quản lý thông tin giáo viên trong trường</p>
         </div>
         <Button className="gap-2">
           <Plus className="h-4 w-4" />
-          Them giao vien
+          Thêm giáo viên
         </Button>
       </div>
 
@@ -75,7 +75,7 @@ export default function TeachersPage() {
                     Ngay vao: {new Date(teacher.joinDate).toLocaleDateString('vi-VN')}
                   </span>
                   <Badge variant={teacher.status === 'active' ? 'default' : teacher.status === 'on-leave' ? 'secondary' : 'destructive'}>
-                    {teacher.status === 'active' ? 'Dang day' : teacher.status === 'on-leave' ? 'Nghi phep' : 'Da nghi viec'}
+                    {teacher.status === 'active' ? 'Đang dạy' : teacher.status === 'on-leave' ? 'Nghỉ phép' : 'Đã nghỉ việc'}
                   </Badge>
                 </div>
               </CardContent>

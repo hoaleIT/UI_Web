@@ -12,17 +12,17 @@ export default function SettingsPage() {
       {/* Info Banner */}
       <Card className="border-muted-foreground/30 bg-muted/20">
         <CardContent className="py-4">
-          <p className="text-sm text-muted-foreground">
+          {/* <p className="text-sm text-muted-foreground">
             <span className="font-semibold text-foreground">Static Route:</span> /dashboard/settings - 
             Trang cai dat he thong. Vi du ve nested static route.
-          </p>
+          </p> */}
         </CardContent>
       </Card>
 
       {/* Header */}
       <div>
-        <h3 className="text-2xl font-bold text-foreground">Cai dat he thong</h3>
-        <p className="text-muted-foreground">Quan ly cau hinh va tuy chon cho ung dung</p>
+        <h3 className="text-2xl font-bold text-foreground">Cài đặt hệ thống</h3>
+        <p className="text-muted-foreground">Quản lý cấu hình và tùy chọn cho ứng dụng</p>
       </div>
 
       <div className="grid gap-6 lg:grid-cols-3">
@@ -33,21 +33,21 @@ export default function SettingsPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Settings className="h-5 w-5" />
-                Cai dat chung
+                Cài đặt chung
               </CardTitle>
-              <CardDescription>Cau hinh co ban cho he thong</CardDescription>
+              <CardDescription>Cấu hình cơ bản cho hệ thống</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="grid gap-2">
-                <Label htmlFor="school-name">Ten truong</Label>
-                <Input id="school-name" defaultValue="Truong THPT Demo" />
+                <Label htmlFor="school-name">Tên trường</Label>
+                <Input id="school-name" defaultValue="Trường THPT Demo" />
               </div>
               <div className="grid gap-2">
-                <Label htmlFor="school-email">Email lien he</Label>
+                <Label htmlFor="school-email">Email liên hệ</Label>
                 <Input id="school-email" type="email" defaultValue="contact@school.edu.vn" />
               </div>
               <div className="grid gap-2">
-                <Label htmlFor="school-phone">So dien thoai</Label>
+                <Label htmlFor="school-phone">Số điện thoại</Label>
                 <Input id="school-phone" defaultValue="028 1234 5678" />
               </div>
             </CardContent>
@@ -58,31 +58,31 @@ export default function SettingsPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Bell className="h-5 w-5" />
-                Thong bao
+                Thông báo
               </CardTitle>
-              <CardDescription>Quan ly cac tuy chon thong bao</CardDescription>
+              <CardDescription>Quản lý các tùy chọn thông báo</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="font-medium">Thong bao email</p>
-                  <p className="text-sm text-muted-foreground">Nhan thong bao qua email</p>
+                  <p className="font-medium">Thông báo email</p>
+                  <p className="text-sm text-muted-foreground">Nhận thông báo qua email</p>
                 </div>
                 <Switch defaultChecked />
               </div>
               <Separator />
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="font-medium">Thong bao SMS</p>
-                  <p className="text-sm text-muted-foreground">Nhan thong bao qua tin nhan</p>
+                  <p className="font-medium">Thông báo SMS</p>
+                  <p className="text-sm text-muted-foreground">Nhận thông báo qua tin nhắn</p>
                 </div>
                 <Switch />
               </div>
               <Separator />
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="font-medium">Thong bao hoc sinh</p>
-                  <p className="text-sm text-muted-foreground">Gui thong bao cho hoc sinh</p>
+                  <p className="font-medium">Thông báo học sinh</p>
+                  <p className="text-sm text-muted-foreground">Gửi thông báo cho học sinh</p>
                 </div>
                 <Switch defaultChecked />
               </div>
@@ -94,23 +94,23 @@ export default function SettingsPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Shield className="h-5 w-5" />
-                Bao mat
+                Bảo mật
               </CardTitle>
-              <CardDescription>Cau hinh bao mat he thong</CardDescription>
+              <CardDescription>Cấu hình bảo mật hệ thống</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="font-medium">Xac thuc 2 yeu to</p>
-                  <p className="text-sm text-muted-foreground">Yeu cau xac thuc them khi dang nhap</p>
+                  <p className="font-medium">Xác thực 2 yếu tố</p>
+                  <p className="text-sm text-muted-foreground">Yêu cầu xác thực thêm khi đăng nhập</p>
                 </div>
                 <Switch />
               </div>
               <Separator />
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="font-medium">Tu dong dang xuat</p>
-                  <p className="text-sm text-muted-foreground">Dang xuat sau 30 phut khong hoat dong</p>
+                  <p className="font-medium">Tự động đăng xuất</p>
+                  <p className="text-sm text-muted-foreground">Đăng xuất sau 30 phút không hoạt động</p>
                 </div>
                 <Switch defaultChecked />
               </div>
@@ -125,16 +125,16 @@ export default function SettingsPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Palette className="h-5 w-5" />
-                Giao dien
+                Giao diện
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-center justify-between">
-                <span className="text-sm">Che do toi</span>
+                <span className="text-sm">Chế độ tối</span>
                 <Switch defaultChecked />
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-sm">Compact mode</span>
+                <span className="text-sm">Chế độ gọn</span>
                 <Switch />
               </div>
             </CardContent>
@@ -145,14 +145,14 @@ export default function SettingsPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Globe className="h-5 w-5" />
-                Ngon ngu
+                Ngôn ngữ
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-2">
                 <div className="flex items-center justify-between rounded-lg border border-primary bg-primary/10 p-3">
-                  <span className="font-medium">Tieng Viet</span>
-                  <span className="text-xs text-primary">Hien tai</span>
+                  <span className="font-medium">Tiếng Việt</span>
+                  <span className="text-xs text-primary">Hiện tại</span>
                 </div>
                 <div className="flex cursor-pointer items-center justify-between rounded-lg border border-border p-3 hover:bg-accent">
                   <span>English</span>
@@ -166,21 +166,21 @@ export default function SettingsPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Database className="h-5 w-5" />
-                Co so du lieu
+                Cơ sở dữ liệu
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-3 text-sm">
               <div className="flex items-center justify-between">
-                <span className="text-muted-foreground">Trang thai</span>
-                <span className="font-medium text-success">Hoat dong</span>
+                <span className="text-muted-foreground">Trạng thái</span>
+                <span className="font-medium text-success">Hoạt động</span>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-muted-foreground">Phien ban</span>
+                <span className="text-muted-foreground">Phiên bản</span>
                 <span className="font-medium">Demo v1.0</span>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-muted-foreground">Sao luu</span>
-                <span className="font-medium">Moi nhat: Hom nay</span>
+                <span className="text-muted-foreground">Sao lưu</span>
+                <span className="font-medium">Mới nhất: Hôm nay</span>
               </div>
             </CardContent>
           </Card>
@@ -189,8 +189,8 @@ export default function SettingsPage() {
 
       {/* Save Button */}
       <div className="flex justify-end gap-3">
-        <Button variant="outline">Huy bo</Button>
-        <Button>Luu thay doi</Button>
+        <Button variant="outline">Hủy bỏ</Button>
+        <Button>Lưu thay đổi</Button>
       </div>
     </div>
   )

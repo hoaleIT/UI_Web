@@ -20,14 +20,14 @@ import { Input } from '@/components/ui/input'
 import { Badge } from '@/components/ui/badge'
 
 const navigation = [
-  { name: 'Tong quan', href: '/dashboard', icon: LayoutDashboard },
-  { name: 'Hoc sinh', href: '/dashboard/students', icon: Users },
-  { name: 'Giao vien', href: '/dashboard/teachers', icon: GraduationCap },
-  { name: 'Lop hoc', href: '/dashboard/classes', icon: School },
-  { name: 'Mon hoc', href: '/dashboard/courses', icon: BookOpen },
-  { name: 'Lich hoc', href: '/dashboard/schedule', icon: Calendar },
-  { name: 'Thong ke', href: '/dashboard/analytics', icon: BarChart3 },
-  { name: 'Cai dat', href: '/dashboard/settings', icon: Settings },
+  { name: 'Tổng quan', href: '/dashboard', icon: LayoutDashboard },
+  { name: 'Học sinh', href: '/dashboard/students', icon: Users },
+  { name: 'Giáo viên', href: '/dashboard/teachers', icon: GraduationCap },
+  { name: 'Lớp học', href: '/dashboard/classes', icon: School },
+  { name: 'Môn học', href: '/dashboard/courses', icon: BookOpen },
+  { name: 'Lịch học', href: '/dashboard/schedule', icon: Calendar },
+  { name: 'Thống kê', href: '/dashboard/analytics', icon: BarChart3 },
+  { name: 'Cài đặt', href: '/dashboard/settings', icon: Settings },
 ]
 
 export function DashboardSidebar() {
@@ -52,7 +52,7 @@ export function DashboardSidebar() {
           <div className="relative">
             <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
             <Input
-              placeholder="Tim kiem..."
+              placeholder="Tìm kiếm..."
               className="h-9 bg-sidebar-accent pl-9 text-sm placeholder:text-muted-foreground"
             />
           </div>
@@ -61,7 +61,7 @@ export function DashboardSidebar() {
         {/* Navigation */}
         <nav className="flex-1 space-y-1 px-3 py-2">
           <p className="mb-2 px-3 text-xs font-medium uppercase tracking-wider text-muted-foreground">
-            Menu chinh
+            Màn hình chính
           </p>
           {navigation.map((item) => {
             const isActive = pathname === item.href || 
@@ -108,14 +108,14 @@ export function DashboardHeader() {
   const pathname = usePathname()
   
   const getTitle = () => {
-    if (pathname === '/dashboard') return 'Tong quan'
-    if (pathname.startsWith('/dashboard/students')) return 'Quan ly hoc sinh'
-    if (pathname.startsWith('/dashboard/teachers')) return 'Quan ly giao vien'
-    if (pathname.startsWith('/dashboard/classes')) return 'Quan ly lop hoc'
-    if (pathname.startsWith('/dashboard/courses')) return 'Quan ly mon hoc'
-    if (pathname.startsWith('/dashboard/schedule')) return 'Lich hoc'
-    if (pathname.startsWith('/dashboard/analytics')) return 'Thong ke'
-    if (pathname.startsWith('/dashboard/settings')) return 'Cai dat'
+    if (pathname === '/dashboard') return 'Tổng quan'
+    if (pathname.startsWith('/dashboard/students')) return 'Quản lý học sinh'
+    if (pathname.startsWith('/dashboard/teachers')) return 'Quản lý giáo viên'
+    if (pathname.startsWith('/dashboard/classes')) return 'Quản lý lớp học'
+    if (pathname.startsWith('/dashboard/courses')) return 'Quản lý môn học'
+    if (pathname.startsWith('/dashboard/schedule')) return 'Lịch học'
+    if (pathname.startsWith('/dashboard/analytics')) return 'Thống kê'
+    if (pathname.startsWith('/dashboard/settings')) return 'Cài đặt'
     return 'Dashboard'
   }
 

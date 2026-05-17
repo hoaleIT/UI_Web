@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 const stats = [
   {
-    title: 'Tong so hoc sinh',
+    title: 'Tổng số học sinh',
     value: students.length.toString(),
     change: '+12%',
     trend: 'up',
@@ -16,7 +16,7 @@ const stats = [
     bgColor: 'bg-chart-1/10',
   },
   {
-    title: 'Tong so giao vien',
+    title: 'Tổng số giáo viên',
     value: teachers.length.toString(),
     change: '+5%',
     trend: 'up',
@@ -26,7 +26,7 @@ const stats = [
     bgColor: 'bg-chart-2/10',
   },
   {
-    title: 'So lop hoc',
+    title: 'Số lớp học',
     value: classes.length.toString(),
     change: '0%',
     trend: 'neutral',
@@ -36,7 +36,7 @@ const stats = [
     bgColor: 'bg-chart-3/10',
   },
   {
-    title: 'Mon hoc',
+    title: 'Số môn học',
     value: courses.length.toString(),
     change: '+8%',
     trend: 'up',
@@ -48,11 +48,11 @@ const stats = [
 ]
 
 const recentActivities = [
-  { id: 1, action: 'Them hoc sinh moi', name: 'Nguyen Van An', time: '5 phut truoc', type: 'student' },
-  { id: 2, action: 'Cap nhat diem', name: 'Lop 12A1', time: '15 phut truoc', type: 'class' },
-  { id: 3, action: 'Dang ky mon hoc', name: 'Dai so tuyen tinh', time: '1 gio truoc', type: 'course' },
-  { id: 4, action: 'Them giao vien', name: 'ThS. Tran Van Binh', time: '2 gio truoc', type: 'teacher' },
-  { id: 5, action: 'Tao lich hoc', name: 'HK1 2024-2025', time: '3 gio truoc', type: 'schedule' },
+  { id: 1, action: 'Thêm học sinh mới', name: 'Nguyen Van An', time: '5 phút trước', type: 'student' },
+  { id: 2, action: 'Cập nhật điểm', name: 'Lớp 12A1', time: '15 phút trước', type: 'class' },
+  { id: 3, action: 'Đăng ký môn học', name: 'Đại số tuyến tính', time: '1 giờ trước', type: 'course' },
+  { id: 4, action: 'Thêm giáo viên', name: 'ThS. Trần Văn Bình', time: '2 giờ trước', type: 'teacher' },
+  { id: 5, action: 'Tạo lịch học', name: 'HK1 2024-2025', time: '3 giờ trước', type: 'schedule' },
 ]
 
 export default function DashboardPage() {
@@ -66,13 +66,13 @@ export default function DashboardPage() {
               <BookOpen className="h-5 w-5 text-primary" />
             </div>
             <div>
-              <h3 className="font-semibold text-foreground">Demo Next.js Routing</h3>
+              {/* <h3 className="font-semibold text-foreground">Demo Next.js Routing</h3>
               <p className="text-sm text-muted-foreground">
                 Dashboard nay demo cac tinh nang: <span className="text-primary">Static Routes</span>, 
                 <span className="text-primary"> Dynamic Routes [id]</span>, 
                 <span className="text-primary"> Parallel Routes @modal</span>, 
                 <span className="text-primary"> Intercepting Routes (.)</span>
-              </p>
+              </p> */}
             </div>
           </div>
         </CardContent>
@@ -116,9 +116,9 @@ export default function DashboardPage() {
         {/* Recent Students */}
         <Card>
           <CardHeader className="flex flex-row items-center justify-between">
-            <CardTitle className="text-lg">Hoc sinh gan day</CardTitle>
+            <CardTitle className="text-lg">Học sinh gần đây</CardTitle>
             <Link href="/dashboard/students" className="flex items-center gap-1 text-sm text-primary hover:underline">
-              Xem tat ca <ArrowRight className="h-4 w-4" />
+              Xem tất cả <ArrowRight className="h-4 w-4" />
             </Link>
           </CardHeader>
           <CardContent>
@@ -151,7 +151,7 @@ export default function DashboardPage() {
         {/* Recent Activities */}
         <Card>
           <CardHeader>
-            <CardTitle className="text-lg">Hoat dong gan day</CardTitle>
+            <CardTitle className="text-lg">Hoạt động gần đây</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
@@ -176,9 +176,9 @@ export default function DashboardPage() {
       {/* Classes Overview */}
       <Card>
         <CardHeader className="flex flex-row items-center justify-between">
-          <CardTitle className="text-lg">Danh sach lop hoc</CardTitle>
+          <CardTitle className="text-lg">Danh sách lớp học</CardTitle>
           <Link href="/dashboard/classes" className="flex items-center gap-1 text-sm text-primary hover:underline">
-            Xem tat ca <ArrowRight className="h-4 w-4" />
+            Xem tất cả <ArrowRight className="h-4 w-4" />
           </Link>
         </CardHeader>
         <CardContent>
@@ -191,12 +191,12 @@ export default function DashboardPage() {
               >
                 <div className="flex items-center justify-between">
                   <h4 className="text-lg font-semibold text-foreground">{cls.name}</h4>
-                  <Badge variant="outline">Khoi {cls.grade}</Badge>
+                  <Badge variant="outline">Khối {cls.grade}</Badge>
                 </div>
                 <div className="mt-3 space-y-1 text-sm text-muted-foreground">
                   <p>GVCN: {cls.homeroom}</p>
-                  <p>So hoc sinh: {cls.studentCount}</p>
-                  <p>Phong: {cls.room} - {cls.schedule}</p>
+                  <p>Số học sinh: {cls.studentCount}</p>
+                  <p>Phòng: {cls.room} - {cls.schedule}</p>
                 </div>
               </Link>
             ))}

@@ -13,8 +13,8 @@ export default function CoursesPage() {
       <Card className="border-chart-4/30 bg-chart-4/5">
         <CardContent className="py-4">
           <p className="text-sm text-muted-foreground">
-            <span className="font-semibold text-chart-4">Static Route:</span> /dashboard/courses - 
-            Danh sach cac mon hoc trong truong
+            {/* <span className="font-semibold text-chart-4">Static Route:</span> /dashboard/courses -  */}
+            Danh sách các môn học trong trường
           </p>
         </CardContent>
       </Card>
@@ -22,12 +22,12 @@ export default function CoursesPage() {
       {/* Header */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h3 className="text-2xl font-bold text-foreground">Danh sach mon hoc</h3>
-          <p className="text-muted-foreground">Quan ly cac mon hoc va chuong trinh dao tao</p>
+          <h3 className="text-2xl font-bold text-foreground">Danh sách môn học</h3>
+          <p className="text-muted-foreground">Quản lý các môn học và chương trình đào tạo</p>
         </div>
         <Button className="gap-2">
           <Plus className="h-4 w-4" />
-          Them mon hoc
+          Thêm môn học
         </Button>
       </div>
 
@@ -36,7 +36,7 @@ export default function CoursesPage() {
         <CardContent className="pt-6">
           <div className="relative">
             <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-            <Input placeholder="Tim kiem mon hoc theo ten, ma mon..." className="pl-9" />
+            <Input placeholder="Tìm kiếm môn học theo tên, mã môn..." className="pl-9" />
           </div>
         </CardContent>
       </Card>
@@ -65,14 +65,14 @@ export default function CoursesPage() {
                 <div className="flex items-center gap-2">
                   <Clock className="h-4 w-4 text-muted-foreground" />
                   <div>
-                    <p className="text-xs text-muted-foreground">Tin chi</p>
+                    <p className="text-xs text-muted-foreground">Tín chỉ</p>
                     <p className="font-semibold">{course.credits}</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-2">
                   <Users className="h-4 w-4 text-muted-foreground" />
                   <div>
-                    <p className="text-xs text-muted-foreground">Hoc sinh</p>
+                    <p className="text-xs text-muted-foreground">Học sinh</p>
                     <p className="font-semibold">{course.studentCount}</p>
                   </div>
                 </div>
